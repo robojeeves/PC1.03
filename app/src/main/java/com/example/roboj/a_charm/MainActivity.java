@@ -9,11 +9,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button b_login;
     private Button b_add10, b_add15, b_sub25;
+    private EditText tf_email, tf_password;
     private ProgressBar pb_creditHrs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +24,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         b_login = (Button) findViewById(R.id.b_login);
+        tf_email = (EditText) findViewById(R.id.tf_email);
+        tf_password = (EditText) findViewById(R.id.tf_password);
 
         b_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                OpenReportScreen();
+                if(tf_email.getText().toString().contains("@patriots.uttyler.edu") &&
+                        !tf_password.getText().toString().isEmpty())
+                {
+                    OpenReportScreen();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"Invalid Username/password combination.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
