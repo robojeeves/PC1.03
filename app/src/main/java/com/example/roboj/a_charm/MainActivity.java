@@ -5,12 +5,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.lzyzsd.circleprogress.CircleProgress;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button b_add10, b_add15, b_sub25;
     private EditText tf_email, tf_password;
     private DonutProgress pb_creditHrs;
+    private TextView tv_forgotPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         b_login = (Button) findViewById(R.id.b_login);
         tf_email = (EditText) findViewById(R.id.tf_email);
         tf_password = (EditText) findViewById(R.id.tf_password);
+        tv_forgotPassword = (TextView) findViewById(R.id.tv_forgotPassword);
+        tv_forgotPassword.setMovementMethod(LinkMovementMethod.getInstance());
 
        OpenStudentAdvisory();
 
