@@ -13,11 +13,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.github.lzyzsd.circleprogress.CircleProgress;
+import com.github.lzyzsd.circleprogress.DonutProgress;
+
 public class MainActivity extends AppCompatActivity {
     private Button b_login;
     private Button b_add10, b_add15, b_sub25;
     private EditText tf_email, tf_password;
-    private ProgressBar pb_creditHrs;
+    private DonutProgress pb_creditHrs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
         tf_email = (EditText) findViewById(R.id.tf_email);
         tf_password = (EditText) findViewById(R.id.tf_password);
 
+       OpenStudentAdvisory();
+
         b_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(tf_email.getText().toString().contains("@patriots.uttyler.edu") &&
                         !tf_password.getText().toString().isEmpty())
                 {
-                    OpenReportScreen();
+                    OpenStudentAdvisory();
                 }
                 else
                 {
@@ -47,30 +52,37 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void OpenStudentAdvisory(){
+        setContentView(R.layout.student_advisory);
+    }
+
     private void OpenReportScreen() {
         setContentView(R.layout.sa_report);
 
         b_add10 = (Button) findViewById(R.id.b_add10);
         b_add15 = (Button) findViewById(R.id.b_add15);
         b_sub25 = (Button) findViewById(R.id.b_sub25);
-        pb_creditHrs = (ProgressBar) findViewById(R.id.pb_creditHrs);
+        pb_creditHrs = (DonutProgress) findViewById(R.id.pb_creditHrs);
 
         b_add10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pb_creditHrs.incrementProgressBy(10);
+                pb_creditHrs.setProgress(pb_creditHrs.getProgress()+10);
+                //pb_creditHrs.incrementProgressBy(10);
             }
         });
         b_add15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pb_creditHrs.incrementProgressBy(15);
+                pb_creditHrs.setProgress(pb_creditHrs.getProgress()+15);
+                //pb_creditHrs.incrementProgressBy(15);
             }
         });
         b_sub25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pb_creditHrs.incrementProgressBy(-25);
+                pb_creditHrs.setProgress(pb_creditHrs.getProgress()-25);
+                //pb_creditHrs.incrementProgressBy(-25);
             }
         });
 

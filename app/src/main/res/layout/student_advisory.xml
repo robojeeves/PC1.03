@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <com.github.lzyzsd.circleprogress.DonutProgress
+        android:id="@+id/donutProgress"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:donut_circle_starting_degree="270"
+        app:donut_finished_color="@color/colorAccent"
+        app:donut_progress="56"
+        app:donut_text="56%"
+        app:donut_text_color="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="238dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:progress="35"
+        android:progressBackgroundTint="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="238dp"
+        android:layout_height="36dp"
+        android:progress="45"
+        android:progressBackgroundTint="@android:color/black"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="24dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="238dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:progress="50"
+        android:progressBackgroundTint="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="238dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:progress="100"
+        android:progressBackgroundTint="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="238dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:progress="85"
+        android:progressBackgroundTint="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-1dp"
+        android:text="Core Curriculum (100%)"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar2"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/progressBar2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:text="[Degree Plan], Core (85%)"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-1dp"
+        android:text="[Degree Plan], Lower Division (50%)"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar3"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/progressBar3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="[Deegree Plan], Upper Division (35%)"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar4"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/progressBar4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-1dp"
+        android:text="[Degree Plan], Support Courses (45%)"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar5"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/progressBar5" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="117dp"
+        android:layout_height="108dp"
+        app:srcCompat="@drawable/patriot_check_trsp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="144dp"
+        android:layout_height="47dp"
+        android:checked="true"
+        android:shadowColor="@android:color/black"
+        android:text="@string/view_switch"
+        android:textOn="Infographic"
+        android:textSize="17sp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="167dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="100dp"
+        android:text="Completion Status\n      67/120 Hrs"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintLeft_toLeftOf="@+id/donutProgress"
+        app:layout_constraintRight_toRightOf="@+id/donutProgress"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
