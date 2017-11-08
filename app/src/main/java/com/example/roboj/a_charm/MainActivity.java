@@ -23,9 +23,7 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private Button b_login;
-   // private Button b_add10, b_add15, b_sub25;
     private EditText tf_email, tf_password;
-   // private DonutProgress pb_creditHrs;
     private DonutProgress dp_completionStatus;
     private TextView tv_completionStatus, tv_core, tv_degreeCore, tv_lowerDivision, tv_upperDivision, tv_supportCourses;
     private ProgressBar pb_core, pb_degreeCore, pb_lowerDivision, pb_upperDivision, pb_supportCourses;
@@ -48,8 +46,11 @@ public class MainActivity extends AppCompatActivity {
         b_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tf_email.getText().toString().contains("@patriots.uttyler.edu") &&
-                        !tf_password.getText().toString().isEmpty())
+                if(!tf_email.getText().toString().contains("@patriots.uttyler.edu"))
+                {
+                    tf_email.append("@patriots.uttyler.edu");
+                }
+                if(!tf_password.getText().toString().isEmpty())
                 {
                     OpenStudentAdvisory();
                 }
@@ -113,38 +114,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* private void OpenReportScreen() {
-        setContentView(R.layout.sa_report);
-
-        b_add10 = (Button) findViewById(R.id.b_add10);
-        b_add15 = (Button) findViewById(R.id.b_add15);
-        b_sub25 = (Button) findViewById(R.id.b_sub25);
-        pb_creditHrs = (DonutProgress) findViewById(R.id.pb_creditHrs);
-
-        b_add10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pb_creditHrs.setProgress(pb_creditHrs.getProgress()+10);
-                //pb_creditHrs.incrementProgressBy(10);
-            }
-        });
-        b_add15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pb_creditHrs.setProgress(pb_creditHrs.getProgress()+15);
-                //pb_creditHrs.incrementProgressBy(15);
-            }
-        });
-        b_sub25.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pb_creditHrs.setProgress(pb_creditHrs.getProgress()-25);
-                //pb_creditHrs.incrementProgressBy(-25);
-            }
-        });
-
-    }
-    */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
