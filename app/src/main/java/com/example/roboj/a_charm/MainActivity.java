@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         tv_forgotPassword = (TextView) findViewById(R.id.tv_forgotPassword);
         tv_forgotPassword.setMovementMethod(LinkMovementMethod.getInstance());
 
-       OpenStudentAdvisory();
+       //OpenStudentAdvisory();
 
         b_login.setOnClickListener(new View.OnClickListener() {
             @Override
