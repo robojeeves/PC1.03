@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_completionStatus, tv_core, tv_degreeCore, tv_lowerDivision, tv_upperDivision, tv_supportCourses;
     private ProgressBar pb_core, pb_degreeCore, pb_lowerDivision, pb_upperDivision, pb_supportCourses;
     private TextView tv_forgotPassword;
+    private ConnectSQL sql_connector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,23 +42,32 @@ public class MainActivity extends AppCompatActivity {
         tv_forgotPassword = (TextView) findViewById(R.id.tv_forgotPassword);
         tv_forgotPassword.setMovementMethod(LinkMovementMethod.getInstance());
 
+        // Uncomment next line to test Student Advisory page without log-in each time
        //OpenStudentAdvisory();
 
         b_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sql_connector = new ConnectSQL();
+                String email = tf_email.getText().toString();
+                String password = tf_password.getText().toString();
+
+                //If user does not include @patriots.uttyler.edu, it will be added automatically
                 if(!tf_email.getText().toString().contains("@patriots.uttyler.edu"))
                 {
                     tf_email.append("@patriots.uttyler.edu");
                 }
-                if(!tf_password.getText().toString().isEmpty())
+
+                //make a connection, if valid user/password then open Advisory page
+                if (sql_connector.makeConnection(email, password))
                 {
                     OpenStudentAdvisory();
                 }
-                else
+                else // display error message
                 {
                     Toast.makeText(MainActivity.this,"Invalid Username/password combination.", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 
